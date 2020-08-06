@@ -11,8 +11,12 @@ class Home extends React.Component {
         this.state = {
             group: "1",
             name: [],
-            teste: "",
-            novoTeste: []
+            changeColorDefault: "btnGroup__action",
+            changeColorTwo: "",
+            changeColorThree: "",
+            orderGroup: "one",
+            newListOne: [],
+            newListTwo: []
         }
     }
     
@@ -29,61 +33,57 @@ class Home extends React.Component {
 
         switch (id) {
             case "1":
-                return this.setState({ group: "1" })
+                return this.setState({ group: "1", newListTwo: [], changeColorDefault:"btnGroup__action", changeColorTwo: "", changeColorThree: ""  })
             case "2":
-                this.setState({ group: "2" })
-                this.setState({novoTeste: []})
-
+                return this.setState({ group: "2", newListOne: [], changeColorDefault: "", changeColorTwo: "btnGroup__action", changeColorThree:"" })
             case "3":
-                return this.setState({ group: "3" })
+                return this.setState({ group: "3", changeColorTwo: "", changeColorThree:"btnGroup__action",changeColorDefault:""})
             default:
                 return this.setState({ group: "Esse grupo ainda não existe no nosso sistema" })
         }
     }
 
 
-    Order = (e) =>{
+    order = () =>{
         
-        
-        let id = e.target.id;
         const {name} = this.state; 
-        let novoArray = [];
-        let testeArray: []
-        
-        switch (id) {
-            case "12":
-                novoArray = name.groupOne.map( (item) => {
-                    return item.name
-                })
-                testeArray = novoArray.sort((a,b) => a.localeCompare(b, 'pt-br'));
-                // console.log(novoArray)
-                
-                this.setState({teste: "12"})
-                this.setState({novoTeste: testeArray})
-                break;
-            case "13":
-                // const {name} = this.state; 
-                // let novoArray = [];
-                novoArray = name.groupTwo.map( (item) => {
-                    return item.name
-                })
-                testeArray = novoArray.sort((a,b) => a.localeCompare(b, 'pt-br'));
-                // console.log(novoArray)
-                
-                this.setState({teste: "12"})
-                this.setState({novoTeste: testeArray})
-               
+        let orderNameGroupOne = [];
+        let orderNameGroupTwo = [];
 
+        let newListOneOrder = [];
+        let newListTwoOrder = [];
+        
+        
+        switch (this.state.orderGroup) {
+            case "one":
+                    alert("um")
+                orderNameGroupOne = name.groupOne.map( (item) => {
+                    return item.name
+                })
+                newListOneOrder = orderNameGroupOne.sort((a,b) => a.localeCompare(b, 'pt-br'));
+                
+                return this.setState({orderGroup: "one", newListOne: newListOneOrder, group: [] })
+            
+
+            case "two":
+                    alert("dois")
+                orderNameGroupTwo = name.groupTwo.map( (item) => {
+                    return item.name
+                })
+            
+                newListTwoOrder = orderNameGroupTwo.sort((a,b) => a.localeCompare(b, 'pt-br'));
+                return this.setState({orderGroup: "two", newListTwo: newListTwoOrder, group: []})
+                
             default:
-                return this.setState({ group: "Esse grupo ainda não existe no nosso sistema" })
+                return alert('e ai?')
         }
         
     }
 
     render() {
         
-        const { name, novoTeste } = this.state;
-        console.log("oi", novoTeste)
+        const { name, newListOne, newListTwo } = this.state;
+  
         
         
 
@@ -94,17 +94,19 @@ class Home extends React.Component {
                 <div className="table__container">
                     <div className="table__container--btn">
                         <ButtonGroup
-                            className={this.state.changeColor}
+                            className={this.state.changeColorDefault}
                             id="1"
                             onClick={this.changeGroup}
                             textButton="GRUPO 1"
                         />
                         <ButtonGroup
+                            className={this.state.changeColorTwo}
                             id="2"
                             onClick={this.changeGroup}
                             textButton="GRUPO 2"
                         />
                         <ButtonGroup
+                            className={this.state.changeColorThree}
                             id="3"
                             onClick={this.changeGroup}
                             textButton="GRUPO 3"
@@ -122,9 +124,9 @@ class Home extends React.Component {
                             </>
                         )}
                         
-                        {this.state.teste === "12" && (
+                        {this.state.orderGroup === "one" && (
                             <>
-                                {novoTeste.map(item => (
+                                {newListOne.map(item => (
                                     <ul>
                                         <li>{item}</li>
                                     </ul>
@@ -138,9 +140,10 @@ class Home extends React.Component {
                             {name.groupTwo.map(item => (<p>{item.name}</p>))}
                         </>
                         )}
-                        {this.state.teste === "13" && (
+
+                        {this.state.orderGroup === "two" && (
                             <>
-                                {novoTeste.map(item => (
+                                {newListTwo.map(item => (
                                     <ul>
                                         <li>{item}</li>
                                     </ul>
@@ -154,8 +157,17 @@ class Home extends React.Component {
                         </>
                         )}
                     </div>
-                        
-                        <button id="13" onClick={this.Order}>Nome</button>
+                        <div className="btnOrderTypes__container">
+                            <div className="btnOrderTypes__nameColor">
+                                <h6>ORDENAR POR:</h6>
+                                <button className="btnOrderTypes_name" onClick={this.order}>Nome</button>
+                                <button className="btnOrderTypes_color"onClick={this.order}>Cor</button>
+                            </div>
+                            <div>
+                            <button className="btnOrderTypes_random" >Embaralhar</button>
+                            </div>
+
+                        </div>
                 </div>
             </section>
         )
