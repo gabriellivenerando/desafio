@@ -1,0 +1,95 @@
+{
+    "groupOne": 
+            [
+        {
+            "id": 1,
+            "name": "Gabrielli"
+        },
+        {
+            "id": 2,
+            "name": "Ingrid"
+        },
+        {
+            "id": 3,
+            "name": "Raquel"
+        },
+        {
+            "id": 4,
+            "name": "Jordana"
+        },
+        {
+            "id": 5,
+            "name": "Maria"
+        },
+        {
+            "id": 6,
+            "name": "Adela"
+        },
+        {
+            "id": 7,
+            "name": "Nayla"
+        }
+    ],
+
+    "groupTwo": [
+        {
+            "id": 1,
+            "name": "Mônica"
+        },
+        {
+            "id": 2,
+            "name": "Bruna"
+        },
+        {
+            "id": 3,
+            "name": "Beatriz"
+        },
+        {
+            "id": 4,
+            "name": "Fernanda"
+        },
+        {
+            "id": 5,
+            "name": "Rafela"
+        },
+        {
+            "id": 6,
+            "name": "Manuela"
+        },
+        {
+            "id": 7,
+            "name": "Lívia"
+        }
+    ],
+
+    "groupThree": [
+        {
+            "id": 1,
+            "name": "Jéssica"
+        },
+        {
+            "id": 2,
+            "name": "Amanda"
+        },
+        {
+            "id": 3,
+            "name": "Tamires"
+        },
+        {
+            "id": 4,
+            "name": "Joana"
+        },
+        {
+            "id": 5,
+            "name": "Marcela"
+        },
+        {
+            "id": 6,
+            "name": "Luana"
+        },
+        {
+            "id": 7,
+            "name": "Flávia"
+        }
+    ]
+}
