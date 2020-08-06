@@ -11,7 +11,8 @@ class Home extends React.Component {
         this.state = {
             group: "1",
             name: [],
-            teste: ""
+            teste: "",
+            novoTeste: []
         }
     }
     
@@ -30,7 +31,9 @@ class Home extends React.Component {
             case "1":
                 return this.setState({ group: "1" })
             case "2":
-                return this.setState({ group: "2" })
+                this.setState({ group: "2" })
+                this.setState({novoTeste: []})
+
             case "3":
                 return this.setState({ group: "3" })
             default:
@@ -43,17 +46,34 @@ class Home extends React.Component {
         
         
         let id = e.target.id;
+        const {name} = this.state; 
+        let novoArray = [];
+        let testeArray: []
         
         switch (id) {
             case "12":
-                const {name} = this.state;
-                let novoArray = [];
                 novoArray = name.groupOne.map( (item) => {
                     return item.name
                 })
-                const teste = novoArray.sort((a,b) => a.localeCompare(b, 'pt-br'));
-                console.log(teste)
+                testeArray = novoArray.sort((a,b) => a.localeCompare(b, 'pt-br'));
+                // console.log(novoArray)
+                
                 this.setState({teste: "12"})
+                this.setState({novoTeste: testeArray})
+                break;
+            case "13":
+                // const {name} = this.state; 
+                // let novoArray = [];
+                novoArray = name.groupTwo.map( (item) => {
+                    return item.name
+                })
+                testeArray = novoArray.sort((a,b) => a.localeCompare(b, 'pt-br'));
+                // console.log(novoArray)
+                
+                this.setState({teste: "12"})
+                this.setState({novoTeste: testeArray})
+               
+
             default:
                 return this.setState({ group: "Esse grupo ainda não existe no nosso sistema" })
         }
@@ -62,7 +82,9 @@ class Home extends React.Component {
 
     render() {
         
-        const { name } = this.state;
+        const { name, novoTeste } = this.state;
+        console.log("oi", novoTeste)
+        
         
 
         if(name.groupOne === undefined) return <div></div>
@@ -96,19 +118,34 @@ class Home extends React.Component {
                                     <li>{item.name}</li>
                                 </ul>
                                 ))}
-
+                                
                             </>
                         )}
-                                    {this.state.teste === "12" && (
-                                        <>
-                                            <p>oi</p>
-                                        </>
-                                    )}
+                        
+                        {this.state.teste === "12" && (
+                            <>
+                                {novoTeste.map(item => (
+                                    <ul>
+                                        <li>{item}</li>
+                                    </ul>
+                                ))}
+                            </>
+                        )}
+                        
 
                         {this.state.group === "2" && (
                         <>   
                             {name.groupTwo.map(item => (<p>{item.name}</p>))}
                         </>
+                        )}
+                        {this.state.teste === "13" && (
+                            <>
+                                {novoTeste.map(item => (
+                                    <ul>
+                                        <li>{item}</li>
+                                    </ul>
+                                ))}
+                            </>
                         )}
 
                         {this.state.group === "3" && (
@@ -118,7 +155,7 @@ class Home extends React.Component {
                         )}
                     </div>
                         
-                        <button id="12" onClick={this.Order}>Nome</button>
+                        <button id="13" onClick={this.Order}>Nome</button>
                 </div>
             </section>
         )
