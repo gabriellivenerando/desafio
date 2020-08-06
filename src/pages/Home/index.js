@@ -11,11 +11,13 @@ class Home extends React.Component {
         this.state = {
             group: "1",
             name: [],
+            teste: ""
         }
     }
     
     componentDidMount = () => {
         this.setState({name: groups})
+        
     };
 
   
@@ -36,11 +38,34 @@ class Home extends React.Component {
         }
     }
 
-    render() {
 
+    Order = (e) =>{
+        
+        
+        let id = e.target.id;
+        
+        switch (id) {
+            case "12":
+                const {name} = this.state;
+                let novoArray = [];
+                novoArray = name.groupOne.map( (item) => {
+                    return item.name
+                })
+                const teste = novoArray.sort((a,b) => a.localeCompare(b, 'pt-br'));
+                console.log(teste)
+                this.setState({teste: "12"})
+            default:
+                return this.setState({ group: "Esse grupo ainda não existe no nosso sistema" })
+        }
+        
+    }
+
+    render() {
+        
         const { name } = this.state;
-        console.log("name", name)
-       
+        
+
+        if(name.groupOne === undefined) return <div></div>
 
         return (
             <section className="table">
@@ -65,25 +90,35 @@ class Home extends React.Component {
                     </div>
                     <div className="table__container--names">
                         {this.state.group === "1" && (
-                            <>
-                                    <p>Grupo 1</p>   
-                                    {name.map(item => { 
-                                        return <p>{name.groupOne}</p>
-                                    })} 
+                            <> 
+                                {name.groupOne.map(item => (
+                                <ul>
+                                    <li>{item.name}</li>
+                                </ul>
+                                ))}
+
                             </>
                         )}
+                                    {this.state.teste === "12" && (
+                                        <>
+                                            <p>oi</p>
+                                        </>
+                                    )}
 
-                          
                         {this.state.group === "2" && (
-                            <p>Grupo 2</p>
+                        <>   
+                            {name.groupTwo.map(item => (<p>{item.name}</p>))}
+                        </>
                         )}
 
                         {this.state.group === "3" && (
-                            <p>Grupo 3</p>
+                        <>   
+                            {name.groupThree.map(item => (<p>{item.name}</p>))}
+                        </>
                         )}
-
                     </div>
-                   
+                        
+                        <button id="12" onClick={this.Order}>Nome</button>
                 </div>
             </section>
         )
