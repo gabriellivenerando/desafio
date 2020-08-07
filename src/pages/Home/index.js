@@ -63,43 +63,33 @@ class Home extends React.Component {
         switch (this.state.orderGroup) {
             case "one":
                 orderNameGroupOne = name.groupOne.map((item) => {
-                    return { name: item.name,
-                            className: item.className
-                        }
-                    })
-
-                newListOneOrder = orderNameGroupOne.sort((a, b) => a.name.localeCompare(b.name, 'pt-br'));
+                    return item.name
+                })
+                newListOneOrder = orderNameGroupOne.sort((a, b) => a.localeCompare(b, 'pt-br'));
                 return this.setState({ orderGroup: "one", newListOne: newListOneOrder, group: [] })
 
 
             case "two":
                 orderNameGroupTwo = name.groupTwo.map((item) => {
-                    return { name: item.name,
-                        className: item.className
-                    }
+                    return item.name
                 })
 
                 newListTwoOrder = orderNameGroupTwo.sort((a, b) => a.localeCompare(b, 'pt-br'));
                 return this.setState({ orderGroup: "two", newListTwo: newListTwoOrder, group: [] })
             case "three":
                 orderNameGroupThree = name.groupThree.map((item) => {
-                    return { name: item.name,
-                        className: item.className
-                    }
+                    return item.name
                 })
 
                 newListThreeOrder = orderNameGroupThree.sort((a, b) => a.localeCompare(b, 'pt-br'));
                 return this.setState({ orderGroup: "three", newListThree: newListThreeOrder, group: [] })
 
             default:
-                return alert('e ai?')
+                return "Grupo não cadastrado no nosso sistema"
         }
 
     }
 
-    orderColor = () =>{
-
-    }
 
 
     // randomList = () => {
@@ -111,14 +101,14 @@ class Home extends React.Component {
     //             let testeArray = name.groupOne.map((item) => {
     //                 return item.name
     //             })
-                
+
     //             this.setState({ listTest: testeArray })
-                
+
     //             let currentIndex = listTest.length;
     //             let randomIndex;
     //             let temporaryValue;
-               
-                
+
+
     //             while (0 !== currentIndex) {
     //                 randomIndex = Math.floor(Math.random() * currentIndex);
     //                 currentIndex -= 1;
@@ -127,9 +117,9 @@ class Home extends React.Component {
     //                 listTest[randomIndex] = temporaryValue;
     //             }
     //             return this.randomList(listTest)
-                
-            
-                
+
+
+
     //             case "two":
     //             return alert('random- two')
     //         default:
@@ -137,7 +127,7 @@ class Home extends React.Component {
     //         }
     // }
 
-    
+
     // RGBToHSL = (r, g, b)=>{
     //     r /= 255;
     //     g /= 255;
@@ -175,9 +165,9 @@ class Home extends React.Component {
 
     //     return [h, s, l];
     // }
-    
+
     // orderColor = () =>{
-       
+
     // }
 
 
@@ -188,7 +178,7 @@ class Home extends React.Component {
         const { name, newListOne, newListTwo, newListThree, listTest } = this.state;
         console.log(listTest)
 
-        
+
 
         if (name.groupOne === undefined) return <div></div>
 
@@ -238,7 +228,7 @@ class Home extends React.Component {
                             </>
                         )}
 
-                        
+
                         {this.state.group === "2" && (
                             <>
                                 {name.groupTwo.map(item => (
@@ -261,12 +251,12 @@ class Home extends React.Component {
 
                         {this.state.group === "3" && (
                             <>
-                            {name.groupThree.map(item => (
-                                <ul>
-                                    <li className={item.className}>{item.name}</li>
-                                </ul>
-                            ))}
-                        </>
+                                {name.groupThree.map(item => (
+                                    <ul>
+                                        <li className={item.className}>{item.name}</li>
+                                    </ul>
+                                ))}
+                            </>
                         )}
 
                         {this.state.orderGroup === "three" && (
@@ -283,11 +273,11 @@ class Home extends React.Component {
                     <div className="btnOrderTypes__container">
                         <div className="btnOrderTypes__nameColor">
                             <h6>ORDENAR POR:</h6>
-                            <ButtonOrder className="btnOrderTypes_name" onClick={this.order} textButton="Nome"/>
-                            <ButtonOrder className="btnOrderTypes_color" onClick={this.orderColor} textButton="Cor"/>
+                            <ButtonOrder className="btnOrderTypes_name" onClick={this.order} textButton="Nome" />
+                            <ButtonOrder className="btnOrderTypes_color" onClick={this.orderColor} textButton="Cor" />
                         </div>
                         <div>
-                            <ButtonOrder className="btnOrderTypes_random" onClick={this.randomList} textButton="Embaralhar"/>
+                            <ButtonOrder className="btnOrderTypes_random" onClick={this.randomList} textButton="Embaralhar" />
                         </div>
 
                     </div>
