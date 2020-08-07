@@ -1,6 +1,7 @@
 import React from 'react';
 import ButtonGroup from '../../components/ButtonGroup';
-import groups from '../../components/data/groups.json'
+import groups from '../../components/data/groups.json';
+import ButtonOrder from '../../components/ButtonOrder';
 import './home.css';
 
 
@@ -87,6 +88,10 @@ class Home extends React.Component {
             default:
                 return alert('e ai?')
         }
+
+    }
+
+    orderColor = () =>{
 
     }
 
@@ -231,11 +236,11 @@ class Home extends React.Component {
                     <div className="btnOrderTypes__container">
                         <div className="btnOrderTypes__nameColor">
                             <h6>ORDENAR POR:</h6>
-                            <button className="btnOrderTypes_name" onClick={this.order}>Nome</button>
-                            <button className="btnOrderTypes_color" onClick={this.order}>Cor</button>
+                            <ButtonOrder className="btnOrderTypes_name" onClick={this.order} textButton="Nome"/>
+                            <ButtonOrder className="btnOrderTypes_color" onClick={this.orderColor} textButton="Cor"/>
                         </div>
                         <div>
-                            <button className="btnOrderTypes_random" onClick={this.randomList} >Embaralhar</button>
+                            <ButtonOrder className="btnOrderTypes_random" onClick={this.randomList} textButton="Embaralhar"/>
                         </div>
 
                     </div>
