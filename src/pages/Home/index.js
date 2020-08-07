@@ -156,70 +156,71 @@ render() {
                 </div>
 
                 <div className="table__container--names">
+                    
                     {this.state.group === "1" && (
-                        <div className="testee">
+                        <>
                             {name.groupOne.map(item => (
                                 <ul>
                                     <li>{item.name}</li>
                                 </ul>
                             ))}
-                        </div>
+                        </>
                     )}
 
                     {this.state.orderGroup === "one" && (
-                        <div className="testee">
+                        <>
                             {newListOne.map(item => (
                                 <ul>
                                     <li>{item}</li>
                                 </ul>
                             ))}
-                        </div>
+                        </>
                     )}
 
                     {this.state.newRandomList === "randomOne" && (
-                        <div className="testee">
+                        <>
                             {listTest.map(item => (
                                 <ul>
                                     <li>{item}</li>
                                 </ul>
                             ))}
-                        </div>
+                        </>
                     )}
 
 
                     {this.state.group === "2" && (
-                        <div className="testee">
+                        <>
                             {name.groupTwo.map(item => (<p>{item.name}</p>))}
-                        </div>
+                        </>
                     )}
 
                     {this.state.orderGroup === "two" && (
-                        <div className="testee">
+                        <>
                             {newListTwo.map(item => (
                                 <ul>
                                     <li>{item}</li>
                                 </ul>
                             ))}
-                        </div>
+                        </>
                     )}
 
                     {this.state.group === "3" && (
-                        <div className="testee">
+                        <>
                             {name.groupThree.map(item => (<p>{item.name}</p>))}
-                        </div>
+                        </>
                     )}
 
                     {this.state.orderGroup === "three" && (
-                        <div className="testee">
+                        <>
                             {newListThree.map(item => (
                             <ul>
                                 <li>{item}</li>
                             </ul>
                             ))}
-                        </div>
+                        </>
                     )}
                 </div>
-                
+
                 <div className="btnOrderTypes__container">
                     <div className="btnOrderTypes__nameColor">
                         <h6>ORDENAR POR:</h6>
