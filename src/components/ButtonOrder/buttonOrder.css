@@ -1,0 +1,42 @@
+.btnOrderTypes__container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+
+.btnOrderTypes__nameColor{
+    display: flex;
+    justify-content: center;
+    width: 280px;
+    
+}
+
+.btnOrderTypes__nameColor > h6{
+    padding: 4px;
+    margin: 10px 11px auto auto;
+}
+
+.btnOrderTypes_name{
+    background: #FFF;
+    border: 1px black solid;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    height: 36px;
+}
+
+.btnOrderTypes_color{
+    background: #FFF;
+    border: 1px black solid;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 36px;
+}
+
+.btnOrderTypes_random{
+    background: #FFF;
+    border: 1px black solid;
+    border-radius: 8px;
+    height: 36px;
+    width: 85px;
+}

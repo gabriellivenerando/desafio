@@ -63,25 +63,31 @@ class Home extends React.Component {
         switch (this.state.orderGroup) {
             case "one":
                 orderNameGroupOne = name.groupOne.map((item) => {
-                    return item.name
-                })
-                newListOneOrder = orderNameGroupOne.sort((a, b) => a.localeCompare(b, 'pt-br'));
+                    return { name: item.name,
+                            className: item.className
+                        }
+                    })
 
+                newListOneOrder = orderNameGroupOne.sort((a, b) => a.name.localeCompare(b.name, 'pt-br'));
                 return this.setState({ orderGroup: "one", newListOne: newListOneOrder, group: [] })
 
 
             case "two":
                 orderNameGroupTwo = name.groupTwo.map((item) => {
-                    return item.name
+                    return { name: item.name,
+                        className: item.className
+                    }
                 })
 
                 newListTwoOrder = orderNameGroupTwo.sort((a, b) => a.localeCompare(b, 'pt-br'));
                 return this.setState({ orderGroup: "two", newListTwo: newListTwoOrder, group: [] })
             case "three":
                 orderNameGroupThree = name.groupThree.map((item) => {
-                    
-                    return item.className, item.name
+                    return { name: item.name,
+                        className: item.className
+                    }
                 })
+
                 newListThreeOrder = orderNameGroupThree.sort((a, b) => a.localeCompare(b, 'pt-br'));
                 return this.setState({ orderGroup: "three", newListThree: newListThreeOrder, group: [] })
 
@@ -96,34 +102,83 @@ class Home extends React.Component {
     }
 
 
-    randomList = () => {
+    // randomList = () => {
 
-        const { name, listTest } = this.state;
+    //     const { name, listTest } = this.state;
 
-        switch (this.state.newRandomList) {
-            case "one":
-                let testeArray = name.groupOne.map((item) => {
-                    return item.name
-                })
-                return this.setState({ listTest: testeArray })
+    //     switch (this.state.newRandomList) {
+    //         case "one":
+    //             let testeArray = name.groupOne.map((item) => {
+    //                 return item.name
+    //             })
+                
+    //             this.setState({ listTest: testeArray })
+                
+    //             let currentIndex = listTest.length;
+    //             let randomIndex;
+    //             let temporaryValue;
+               
+                
+    //             while (0 !== currentIndex) {
+    //                 randomIndex = Math.floor(Math.random() * currentIndex);
+    //                 currentIndex -= 1;
+    //                 temporaryValue = listTest[currentIndex];
+    //                 listTest[currentIndex] = listTest[randomIndex];
+    //                 listTest[randomIndex] = temporaryValue;
+    //             }
+    //             return this.randomList(listTest)
+                
+            
+                
+    //             case "two":
+    //             return alert('random- two')
+    //         default:
+    //             return alert('erro')
+    //         }
+    // }
 
-                let currentIndex = listTest.length, temporaryValue, randomIndex;
-                while (0 !== currentIndex) {
-                    randomIndex = Math.floor(Math.random() * currentIndex);
-                    currentIndex -= 1;
-                    temporaryValue = listTest[currentIndex];
-                    listTest[currentIndex] = listTest[randomIndex];
-                    listTest[randomIndex] = temporaryValue;
-                }
+    
+    // RGBToHSL = (r, g, b)=>{
+    //     r /= 255;
+    //     g /= 255;
+    //     b /= 255;
+    //     // return console.log(r, g, b)
 
-                return this.randomList(listTest)
+    //     let min = Math.min(r, g, b),
+    //     max = Math.max(r, g, b),
+    //     delta = max - min,
+    //     h = 0,
+    //     s = 0,
+    //     l = 0;
 
-            case "two":
-                return alert('random- two')
-            default:
-                return alert('erro')
-        }
-    }
+    //     if(delta === 0){
+    //         h = 0;
+    //     }else if(max === r){
+    //         h = ((g - b) / delta) % 6;
+    //     }else if(max === g){
+    //         h = (b - r) / delta + 2;
+    //     }else{
+    //         h = (r - g) / delta + 4;
+    //     }
+
+    //     h = Math.round(h * 60);
+    //     if(h < 0){
+    //         h += 360;
+    //     }
+
+    //     l = (max + min) / 2;
+
+    //     s = delta === 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+
+    //     s = +(s * 100).toFixed(1);
+    //     l = +(l * 100).toFixed(1);
+
+    //     return [h, s, l];
+    // }
+    
+    // orderColor = () =>{
+       
+    // }
 
 
 
@@ -131,7 +186,9 @@ class Home extends React.Component {
     render() {
 
         const { name, newListOne, newListTwo, newListThree, listTest } = this.state;
-        console.log("aqui", newListThree)
+        console.log(listTest)
+
+        
 
         if (name.groupOne === undefined) return <div></div>
 
@@ -181,17 +238,7 @@ class Home extends React.Component {
                             </>
                         )}
 
-                        {this.state.newRandomList === "randomOne" && (
-                            <>
-                                {listTest.map(item => (
-                                    <ul>
-                                        <li>{item}</li>
-                                    </ul>
-                                ))}
-                            </>
-                        )}
-
-
+                        
                         {this.state.group === "2" && (
                             <>
                                 {name.groupTwo.map(item => (
