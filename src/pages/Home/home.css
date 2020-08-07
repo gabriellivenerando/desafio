@@ -24,12 +24,14 @@
     height: 258px;
 }
 
-.table__container--names > ul> li{
-    padding: 8px;
-    width: 97px;
-}
 .btnOrderTypes__container{
     display: flex;
+}
+
+.testee > ul > li{
+    padding: 8px;
+    width: 97px;
+    background-color: red;
 }
 
 .btnOrderTypes__nameColor{
