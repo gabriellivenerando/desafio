@@ -24,6 +24,48 @@
     height: 258px;
 }
 
+.itemOne{
+    padding: 8px;
+    background-color:  rgb(140, 211, 240);
+    width: 110px;
+}
+
+.itemTwo{
+    padding: 8px;
+    background-color:  rgb(223, 140, 240);
+    width: 110px;
+}
+
+.itemThree{
+    padding: 8px;
+    background-color:  rgb(225, 240, 140);
+    width: 110px;
+}
+
+.itemFour{
+    padding: 8px;
+    background-color:  rgb(143, 240, 140);
+    width: 110px;
+}
+
+.itemFive{
+    padding: 8px;
+    background-color:  rgb(240, 213, 140);
+    width: 110px;
+}
+
+.itemSix{
+    padding: 8px;
+    background-color:  rgb(141, 92, 151);
+    width: 110px;
+}
+
+.itemSeven{
+    padding: 8px;
+    background-color:  rgb(228, 135, 135);
+    width: 110px;
+}
+
 .btnOrderTypes__container{
     display: flex;
 }

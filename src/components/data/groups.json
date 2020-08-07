@@ -3,93 +3,114 @@
             [
         {
             "id": 1,
-            "name": "Gabrielli"
+            "name": "Gabrielli",
+            "className": "itemOne"
         },
         {
             "id": 2,
-            "name": "Ingrid"
+            "name": "Ingrid",
+            "className": "itemTwo"
         },
         {
             "id": 3,
-            "name": "Raquel"
+            "name": "Raquel",
+            "className": "itemThree"
         },
         {
             "id": 4,
-            "name": "Jordana"
+            "name": "Jordana",
+            "className": "itemFour"
         },
         {
             "id": 5,
-            "name": "Maria"
+            "name": "Maria",
+            "className": "itemFive"
         },
         {
             "id": 6,
-            "name": "Adela"
+            "name": "Adela",
+            "className": "itemSix"
         },
         {
             "id": 7,
-            "name": "Nayla"
+            "name": "Nayla",
+            "className": "itemSeven"
         }
     ],
 
     "groupTwo": [
         {
             "id": 1,
-            "name": "Mônica"
+            "name": "Mônica",
+            "className": "itemOne"
         },
         {
             "id": 2,
-            "name": "Bruna"
+            "name": "Bruna",
+            "className": "itemTwo"
         },
         {
             "id": 3,
-            "name": "Beatriz"
+            "name": "Beatriz",
+            "className": "itemThree"
         },
         {
             "id": 4,
-            "name": "Fernanda"
+            "name": "Fernanda",
+            "className": "itemFour"
         },
         {
             "id": 5,
-            "name": "Rafela"
+            "name": "Rafela",
+            "className": "itemFive"
         },
         {
             "id": 6,
-            "name": "Manuela"
+            "name": "Manuela",
+            "className": "itemSix"
         },
         {
             "id": 7,
-            "name": "Lívia"
+            "name": "Lívia",
+            "className": "itemSeven"
         }
     ],
 
     "groupThree": [
         {
             "id": 1,
-            "name": "Jéssica"
+            "name": "Jéssica",
+            "className": "itemOne"
         },
         {
             "id": 2,
-            "name": "Amanda"
+            "name": "Amanda",
+            "className": "itemTwo"
         },
         {
             "id": 3,
-            "name": "Tamires"
+            "name": "Tamires",
+            "className": "itemThree"
         },
         {
             "id": 4,
-            "name": "Joana"
+            "name": "Joana",
+            "className": "itemFour"
         },
         {
             "id": 5,
-            "name": "Marcela"
+            "name": "Marcela",
+            "className": "itemFive"
         },
         {
             "id": 6,
-            "name": "Luana"
+            "name": "Luana",
+            "className": "itemSix"
         },
         {
             "id": 7,
-            "name": "Flávia"
+            "name": "Flávia",
+            "className": "itemSeven"
         }
     ]
 }
